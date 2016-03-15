@@ -24,18 +24,15 @@ public class MySQLConnect {
     private ResultSet rset;
     
     public static Connection ConnectDb() {
-//        try{
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/student","root","root");
-//            return conn;
-//        }catch(Exception e){
-//            JOptionPane.showMessageDialog(null,e);
-//            return null;
-//        }
+        
         try {
             // Load the Oracle JDBC driver
             OracleDataSource ods = new OracleDataSource();
 
+            //ods.setURL("jdbc:oracle:thin:hr/hr@localhost:1521/XE");
+            //ods.setUser("hr");
+            //ods.setPassword("passhr");
+            
             ods.setURL("jdbc:oracle:thin:@//10.10.2.7:1521/global1");               
             ods.setUser("X00121581");
             ods.setPassword("db29Jan96");

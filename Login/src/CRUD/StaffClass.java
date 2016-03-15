@@ -16,6 +16,10 @@ class StaffClass {
     String password,username,flag,fname,lname,address1,address2,email,pnumber,contract,position;
     List<Availability> availability;
 
+    public StaffClass(){
+        
+    }
+    
     public StaffClass(int userId, String password, String username, String flag, String fname, String lname, String address1, String address2, String email, String pnumber, String contract, String position, List<Availability> availability) {
         this.userId = userId;
         this.password = password;
