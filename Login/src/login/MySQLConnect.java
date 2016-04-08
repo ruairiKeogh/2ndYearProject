@@ -29,13 +29,13 @@ public class MySQLConnect {
             // Load the Oracle JDBC driver
             OracleDataSource ods = new OracleDataSource();
 
-            //ods.setURL("jdbc:oracle:thin:hr/hr@localhost:1521/XE");
-            //ods.setUser("hr");
-            //ods.setPassword("passhr");
+            ods.setURL("jdbc:oracle:thin:hr/hr@localhost:1521/XE");
+            ods.setUser("hr");
+            ods.setPassword("passhr");
             
-            ods.setURL("jdbc:oracle:thin:@//10.10.2.7:1521/global1");               
-            ods.setUser("X00121581");
-            ods.setPassword("db29Jan96");
+//            ods.setURL("jdbc:oracle:thin:@//10.10.2.7:1521/global1");               
+//            ods.setUser("X00121581");
+//            ods.setPassword("db29Jan96");
             
 
             conn = ods.getConnection();

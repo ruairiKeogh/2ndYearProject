@@ -18,13 +18,16 @@ public class Roster {
     int rosterId;
     @Column(name="staff_needed")
     int staffNeeded;
-    @ManyToMany(mappedBy="shift_id")
+    @ManyToOne
+    @JoinColumn(name="shift_id")
     int shiftId;
     @Column(name="week_num")
     int weekNum;
-    @ManyToMany(mappedBy="user_id")
+    @ManyToOne
+    @JoinColumn(name="user_id")       
     int userId;
-    
+    @ManyToOne
+    @JoinColumn(name="rosterList")
     List<EmployeeClass> staffList;
     
     public Roster(){

@@ -18,10 +18,12 @@ public class EmployeeClass {
     @Column(name="user_id")        
     int userId;
     String password,username,flag,name,address1,address2,email,pnumber,contract;
+    double payrate;
     @ManyToOne
     @JoinColumn(name="shift_id")
     Shift shift;
-    @ManyToMany(mappedBy="staffList")
+    @ManyToOne
+    @JoinColumn(name="staffList")
     List<Roster> rosterList;
     
     public EmployeeClass(){
@@ -122,6 +124,15 @@ public class EmployeeClass {
     public void setContract(String contract) {
         this.contract = contract;
     }
+
+    public double getPayrate() {
+        return payrate;
+    }
+
+    public void setPayrate(double payrate) {
+        this.payrate = payrate;
+    }
+    
     
     public Shift getShift(){
         return shift;

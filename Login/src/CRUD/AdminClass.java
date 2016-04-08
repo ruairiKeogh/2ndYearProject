@@ -16,15 +16,6 @@ public class AdminClass extends EmployeeClass{
         super(userId,password,username,flag,name,address1,address2,email,pnumber,contract);
         this.position = position;
     }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-    
     
 }
 

@@ -91,10 +91,10 @@ public class Creates {
         em.getTransaction().commit();
     }
     
-    public void updatePosition(int userId, String positionIn){
+    public void updatePayrate(int userId, double payrateIn){
         em.getTransaction().begin();
         AdminClass admin = em.find(AdminClass.class, userId);
-        admin.setPosition(positionIn);
+        admin.setPayrate(payrateIn);
         em.merge(admin);
         em.getTransaction().commit();
     }
@@ -106,7 +106,7 @@ public class Creates {
     }
     
     
-    public EmployeeClass createEmployee(int userId, String password, String username, String flag, String name, String address1, String address2, String email, String pnumber, String contract, String position){
+    public EmployeeClass createEmployee(int userId, String password, String username, String flag, String name, String address1, String address2, String email, String pnumber, String contract, double payrate){
         if(flag == "M"){
             em.getTransaction().begin();
             AdminClass admin = new AdminClass();
@@ -119,7 +119,7 @@ public class Creates {
             admin.setAddress2(address2);
             admin.setEmail(email);
             admin.setPnumber(pnumber);
-            admin.setPosition(position);
+            admin.setPayrate(payrate);
             staffList.add(admin);
             em.persist(admin);
             em.getTransaction().commit();
@@ -137,6 +137,7 @@ public class Creates {
             staff.setAddress2(address2);
             staff.setEmail(email);
             staff.setPnumber(pnumber);
+            staff.setPayrate(payrate);
             //List<Availability> availability=staff.createAvailability();
             //staff.setAvailability(availability);
             staffList.add(staff);

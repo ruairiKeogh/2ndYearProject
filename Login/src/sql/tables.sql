@@ -24,7 +24,7 @@ CREATE TABLE Users(
 	pnumber varchar2(255),
         availability varchar2(255),
 	contract varchar2(255),
-        position varchar2(255),
+        payrate number,
         shift_id number,
         FOREIGN KEY (shift_id) references Shift(shift_id)
 );
