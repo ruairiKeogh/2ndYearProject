@@ -171,7 +171,7 @@ public class LoginScreen extends javax.swing.JFrame {
                     rs=pst.executeQuery();
                 
                     if(rs.next()){
-                        Admin a=new Admin();
+                        Admin a=new Admin(txt_username.getText());
                         a.setVisible(true);
                     }
                     else{

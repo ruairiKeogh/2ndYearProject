@@ -5,6 +5,9 @@
  */
 package CRUD;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -24,6 +27,10 @@ public class Creates {
     List<Roster> rosterList;
     List<Shift> shiftList;
     List<EmployeeClass> staffList;
+    
+    Connection conn=null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
     
     
     //Admin Updates
@@ -175,5 +182,29 @@ public class Creates {
         em.persist(shift);
         em.getTransaction().commit();
         return shift;
+    }
+    
+    public String getNameNow(String username){
+        String sql="select name from users where username=?";
+        
+        try{
+            
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,username);
+            rs=pst.executeQuery();
+            
+            if(rs.next()){
+                return rs.getString(1);
+            }
+               
+            else{
+                return null;
+            }
+            
+        }catch(Exception e){
+             return null;
+        }
+        
+        
     }
 }
