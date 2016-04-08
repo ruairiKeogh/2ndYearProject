@@ -21,7 +21,7 @@ public class LoginScreen extends javax.swing.JFrame {
     ResultSet rs=null;
     
     public LoginScreen() {
-        initComponents();
+            initComponents();
     }
 
     /**
@@ -49,6 +49,7 @@ public class LoginScreen extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 500));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -56,7 +57,7 @@ public class LoginScreen extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Welcome", 0, 0, new java.awt.Font("Cambria", 1, 24), new java.awt.Color(0, 51, 204))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Welcome", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cambria", 1, 24), new java.awt.Color(0, 51, 204))); // NOI18N
 
         jLabel2.setText("Password:");
 
@@ -120,7 +121,6 @@ public class LoginScreen extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(114, 110, 540, 296);
-        jPanel1.getAccessibleContext().setAccessibleName("Welcome");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background/Logo small.png"))); // NOI18N
         getContentPane().add(jLabel3);
@@ -224,6 +224,7 @@ public class LoginScreen extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginScreen().setVisible(true);
+                ;
             }
         });
     }
