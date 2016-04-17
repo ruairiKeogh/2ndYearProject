@@ -18,8 +18,8 @@ class StaffClass extends EmployeeClass{
         
     }
     
-    public StaffClass(int userId, String password, String username, String flag, String name, String address1, String address2, String email, String pnumber, String contract, List<Availability> availability) {
-        super(userId,username,password,flag,name,address1,address2,email,pnumber,contract);
+    public StaffClass(int userId, String password, String username, String flag, String name, String address1, String address2, String email, String pnumber, String contract, List<Availability> availability,double payrate) {
+        super(userId,username,password,flag,name,address1,address2,email,pnumber,contract,payrate);
         this.availability = availability;
     }
 

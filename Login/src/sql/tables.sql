@@ -64,11 +64,11 @@ CREATE TABLE  Roster (
         staff_needed NUMBER,
 	shift_id NUMBER NOT NULL,
 	week_num NUMBER,
-	user_id NUMBER,
+	users_id NUMBER,
 	PRIMARY KEY (roster_id),
 	FOREIGN KEY (shift_id) REFERENCES Shift(shift_id),
-        FOREIGN KEY (user_id) REFERENCES Users(user_id)
+        FOREIGN KEY (users_id) REFERENCES Users(user_id)
 );
 
-INSERT INTO Users VALUES(301,'WayneCondron','24Mar90','M','Wayne Condron',null,null,null,null,null,null,null,null);
-INSERT INTO Users VALUES(302,'RuairiKeogh','29Jan96','S','Ruairi Keogh',null,null,null,null,null,null,null,null);
+INSERT INTO Users VALUES(301,'WayneCondron','24Mar90','M','Wayne Condron','42 Evergreen Terrace','Springfield','WayneCondron@gmail.com','08512346147',null,'Full Time',9.50,null);
+INSERT INTO Users VALUES(302,'RuairiKeogh','29Jan96','S','Ruairi Keogh','6a Covent View','Boot Road','RuairiKeogh@gmail.com','085128258235',null,'Full Time',10.40,null);

@@ -7,6 +7,7 @@ package CRUD;
 
 import java.util.List;
 import javax.persistence.*;
+import static javax.persistence.CascadeType.ALL;
 
 /**
  *
@@ -15,15 +16,17 @@ import javax.persistence.*;
 @Entity
 public class Shift {
     @Id
-    @Column(name="shift_id")
+    @Column(name = "shift_id")        
     int shiftID;
     @Column(name="shift_time")
     int shiftTime;
     @Column(name="shift_type")
     String shiftType;
     
-    @OneToMany(mappedBy="shift")
-    List<EmployeeClass> staffList;
+    @ManyToOne
+    EmployeeClass staff;
+    @ManyToOne
+    Roster rosterJoin;
 
     public int getShiftID() {
         return shiftID;

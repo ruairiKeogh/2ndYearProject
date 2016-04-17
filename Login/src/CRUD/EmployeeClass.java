@@ -5,32 +5,36 @@
  */
 package CRUD;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
+import static javax.persistence.CascadeType.ALL;
 
 /**
  *
  * @author Ruairí
  */
 @Entity
+@Table(name="Users")
 public class EmployeeClass {
     @Id
-    @Column(name="user_id")        
+    @Column(name="user_id")
     int userId;
     String password,username,flag,name,address1,address2,email,pnumber,contract;
     double payrate;
-    @ManyToOne
-    @JoinColumn(name="shift_id")
-    Shift shift;
-    @ManyToOne
-    @JoinColumn(name="staffList")
+    @OneToMany(cascade = ALL, mappedBy = "staff")
+    List<Shift> shifts = new ArrayList<>();
+//    @ManyToOne
+//    @JoinColumn(name = "users_id")
+//    Roster rosters;
+    @OneToMany(cascade = ALL, mappedBy = "staffList")
     List<Roster> rosterList;
     
     public EmployeeClass(){
         
     }
     
-    public EmployeeClass(int userId, String password, String username, String flag, String name, String address1, String address2, String email, String pnumber, String contract) {
+    public EmployeeClass(int userId, String password, String username, String flag, String name, String address1, String address2, String email, String pnumber, String contract,double payrate) {
         this.userId = userId;
         this.password = password;
         this.username = username;
@@ -41,6 +45,7 @@ public class EmployeeClass {
         this.email = email;
         this.pnumber = pnumber;
         this.contract = contract;
+        this.payrate = payrate;
     }
 
     public int getUserId() {
@@ -134,27 +139,27 @@ public class EmployeeClass {
     }
     
     
-    public Shift getShift(){
-        return shift;
-    }
+//    public Shift getShift(){
+//        return shifts;
+//    }
+//    
+//    public void setShift(Shift shift){
+//        this.shifts=shift;
+//    }
     
-    public void setShift(Shift shift){
-        this.shift=shift;
-    }
-    
-    public List<Roster> getRosterList(){
-        return rosterList;
-    }
-    
-    public void addRoster(Roster r){
-        rosterList.add(r);
-        r.getStaffList().add(this);
-    }
-    
-    public void removeRoster(Roster r){
-        rosterList.remove(r);
-        r.getStaffList().remove(this);
-    }
+//    public List<Roster> getRosterList(){
+//        return rosterList;
+//    }
+//    
+//    public void addRoster(Roster r){
+//        rosterList.add(r);
+//        r.getStaffList().add(this);
+//    }
+//    
+//    public void removeRoster(Roster r){
+//        rosterList.remove(r);
+//        r.getStaffList().remove(this);
+//    }
     
     
 }
