@@ -138,6 +138,9 @@ public class EmployeeClass {
         this.payrate = payrate;
     }
     
+    public void removeStaff(){
+        
+    }
     
 //    public Shift getShift(){
 //        return shifts;

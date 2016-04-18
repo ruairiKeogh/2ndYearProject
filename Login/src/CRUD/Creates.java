@@ -356,9 +356,9 @@ public class Creates {
     }
     
     public void deleteStaff(int userId){
-        EmployeeClass emp = em.find(EmployeeClass.class, userId);
-        
         em.getTransaction().begin();
+        EmployeeClass emp = em.find(EmployeeClass.class, userId);
+        emp.removeStaff();
         em.remove(emp);
         em.getTransaction().commit();
         
@@ -392,6 +392,7 @@ public class Creates {
                     if(test>nextID){
                         System.out.println(test+ " ----- "+nextID);
                         nextID=test;
+                        nextID++;
                         System.out.println("if test>nextID");
                         System.out.println(test+ " ----- "+nextID);
                         loop++;
