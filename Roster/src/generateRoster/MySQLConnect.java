@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package login;
+package generateRoster;
 
 /**
  *
- * @author X00121581
+ * @author Ray
  */
 import oracle.jdbc.pool.OracleDataSource;
 

@@ -3,10 +3,10 @@
   <persistence-unit name="ProjectPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//10.10.2.7:1521/global1"/>
-      <property name="javax.persistence.jdbc.user" value="x00121581"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+      <property name="javax.persistence.jdbc.user" value="hr"/>
       <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-      <property name="javax.persistence.jdbc.password" value="db29Jan96"/>
+      <property name="javax.persistence.jdbc.password" value="passhr"/>
     </properties>
   </persistence-unit>
 </persistence>
